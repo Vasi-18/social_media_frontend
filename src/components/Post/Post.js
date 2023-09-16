@@ -11,7 +11,6 @@ const Post = ({ data }) => {
   const { user } = useSelector((state) => state.authReducer.authData);
   const [liked, setLiked] = useState(data.likes.includes(user._id));
   const [likes, setLikes] = useState(data.likes.length);
-  const [image, setImage] = useState("");
 
   const handleLike = () => {
     setLiked((prev) => !prev);
@@ -19,20 +18,12 @@ const Post = ({ data }) => {
     liked ? setLikes((prev) => prev - 1) : setLikes((prev) => prev + 1);
   };
 
-  useEffect(() => {
-    if (!!data.image)
-      fetch(process.env.REACT_APP_IMAGE_FOLDER + data.image)
-        .then((res) => {
-          setImage(process.env.REACT_APP_IMAGE_FOLDER + data.image);
-        })
-        .catch(() =>
-          setImage(process.env.REACT_APP_PUBLIC_FOLDER + data.image)
-        );
-  }, []);
-
   return (
     <div className="Post">
-      <img src={image} alt="" />
+      <img
+        src={data.image ? process.env.REACT_APP_IMAGE_FOLDER + data.image : ""}
+        alt=""
+      />
 
       <div className="postReact">
         <img
