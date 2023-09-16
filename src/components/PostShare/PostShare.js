@@ -12,7 +12,7 @@ import { uploadImage, uploadPost } from "../../actions/uploadAction";
 
 const PostShare = () => {
   const loading = useSelector((state) => state.postReducer.uploading)
-  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER
+  const serverPublic = process.env.REACT_APP_IMAGE_FOLDER
   const [image, setImage] = useState(null);
   const imageRef = useRef();
 

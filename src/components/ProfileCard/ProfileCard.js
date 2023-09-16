@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 const ProfileCard = ({location}) => {
   const {user} = useSelector((state) => state.authReducer.authData)
   const posts = useSelector((state) => state.postReducer.posts)
-  const serverPublic = process.env.REACT_APP_PUBLIC_FOLDER
+  const serverPublic = process.env.REACT_APP_IMAGE_FOLDER
   return (
     <div className="ProfileCard">
       <div className="ProfileImages">
@@ -18,7 +18,7 @@ const ProfileCard = ({location}) => {
 
       <div className="ProfileName">
         <span>{user.firstname} {user.lastname}</span>
-        <span>{user.worksAt? user.worksAt : "Write About Yourself"}</span>
+        <span>{user.worksAt? user.worksAt : "MERN Stack developer"}</span>
       </div>
 
       <div className="followStatus">
