@@ -18,7 +18,7 @@ const ProfileCard = ({location}) => {
 
       <div className="ProfileName">
         <span>{user.firstname} {user.lastname}</span>
-        <span>{user.worksAt? user.worksAt : "MERN Stack developer"}</span>
+        <span>{user.worksAt? user.worksAt : "Write About Yourself"}</span>
       </div>
 
       <div className="followStatus">
