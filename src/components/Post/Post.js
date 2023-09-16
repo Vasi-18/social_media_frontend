@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Post.css";
 import Comment from "../../img/comment.png";
 import Share from "../../img/share.png";
@@ -17,11 +17,10 @@ const Post = ({ data }) => {
     likePost(data._id, user._id);
     liked ? setLikes((prev) => prev - 1) : setLikes((prev) => prev + 1);
   };
-
   return (
     <div className="Post">
       <img
-        src={data.image ? process.env.REACT_APP_IMAGE_FOLDER + data.image : ""}
+        src={data.image ? process.env.REACT_APP_PUBLIC_FOLDER + data.image : ""}
         alt=""
       />
 
